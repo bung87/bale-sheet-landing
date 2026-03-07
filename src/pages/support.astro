@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const supportOptions = [
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+    title: 'Documentation',
+    description: 'Browse our comprehensive documentation to learn how to use Bale Sheet effectively.',
+    link: '#docs',
+    linkText: 'View Documentation',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+    title: 'FAQs',
+    description: 'Find answers to commonly asked questions about Bale Sheet features and compatibility.',
+    link: '#faqs',
+    linkText: 'View FAQs',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
+    title: 'Email Support',
+    description: 'Can\'t find what you\'re looking for? Send us an email and we\'ll get back to you.',
+    link: 'mailto:ikinokori2024@gmail.com',
+    linkText: 'ikinokori2024@gmail.com',
+  },
+];
+
+const faqs = [
+  {
+    question: 'What file formats does Bale Sheet support?',
+    answer: 'Bale Sheet supports a wide range of formats including .xlsx, .xls, .numbers, .csv, .tsv, .ods, .fods, and legacy formats like Lotus 1-2-3 (.wk1, .wk3, .wk4, .123), Quattro Pro (.qpw), and Microsoft Works (.xlr).',
+  },
+  {
+    question: 'Is my data secure with Bale Sheet?',
+    answer: 'Absolutely. Bale Sheet is a privacy-first application. All processing happens locally on your Mac - your data never leaves your machine or gets uploaded to any cloud service.',
+  },
+  {
+    question: 'What are the system requirements?',
+    answer: 'Bale Sheet requires macOS 11.0 (Big Sur) or later. It runs natively on both Intel and Apple Silicon Macs.',
+  },
+  {
+    question: 'Can I export files to different formats?',
+    answer: 'Yes! Bale Sheet allows you to export spreadsheets to Excel format (.xlsx) and CSV. More export formats are planned for future releases.',
+  },
+  {
+    question: 'How do I generate code from my spreadsheets?',
+    answer: 'Simply open a spreadsheet and use the Code Generation feature. You can generate ORM models and reading code in multiple languages including Python, TypeScript, Rust, Go, Nim, Java, C#, Ruby, and PHP.',
+  },
+];
+---
+
+<Layout title="Community & Support - Bale Sheet">
+  <Navigation />
+  
+  <main class="flex-1 pt-14">
+    <!-- Hero Section -->
+    <section class="py-20 bg-[#f5f5f5]">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-semibold text-[#1a1a1a] mb-4 tracking-tight">
+          Community & Support
+        </h1>
+        <p class="text-lg text-[#6b6b6b] max-w-2xl mx-auto">
+          Get help, connect with other users, and stay updated on the latest Bale Sheet news.
+        </p>
+      </div>
+    </section>
+
+    <!-- Discord Section -->
+    <section class="py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 class="text-3xl font-semibold text-[#1a1a1a] mb-4 tracking-tight">
+              Join our Discord Community
+            </h2>
+            <p class="text-[#6b6b6b] mb-6 leading-relaxed">
+              Connect with thousands of Bale Sheet users, get real-time support, share tips and tricks, 
+              and be the first to know about new features and updates.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-[#f5f5f5] flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#28c840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-medium text-[#1a1a1a]">Real-time Support</p>
+                  <p class="text-sm text-[#6b6b6b]">Get help from the community and developers</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-[#f5f5f5] flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#28c840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-medium text-[#1a1a1a]">Feature Requests</p>
+                  <p class="text-sm text-[#6b6b6b]">Vote on and suggest new features</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-[#f5f5f5] flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#28c840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-medium text-[#1a1a1a]">Beta Access</p>
+                  <p class="text-sm text-[#6b6b6b]">Try new features before they're released</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:sticky md:top-24">
+            <div class="rounded-2xl overflow-hidden border border-[#e5e5e5] shadow-xl shadow-black/5">
+              <iframe
+                src="https://discord.com/widget?id=1292066397299539990&theme=light"
+                width="100%"
+                height="400"
+                allowtransparency="true"
+                frameborder="0"
+                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                class="w-full"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Options -->
+    <section class="py-20 bg-[#f5f5f5]">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-semibold text-[#1a1a1a] mb-12 text-center tracking-tight">
+          Other Ways to Get Help
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {supportOptions.map(option => (
+            <div class="bg-white p-6 rounded-2xl border border-[#e5e5e5] hover:border-[#d4d4d4] transition-macos flex flex-col h-full">
+              <div class="w-12 h-12 mb-4 bg-[#f5f5f5] rounded-xl flex items-center justify-center text-[#1a1a1a]">
+                <Fragment set:html={option.icon} />
+              </div>
+              <h3 class="font-semibold text-[#1a1a1a] mb-2">{option.title}</h3>
+              <p class="text-sm text-[#6b6b6b] mb-4 leading-relaxed flex-1">{option.description}</p>
+              <a 
+                href={option.link}
+                class="text-sm font-medium text-[#1a1a1a] hover:opacity-70 transition-macos inline-flex items-center gap-1 mt-auto"
+              >
+                {option.linkText}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faqs" class="py-20">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 class="text-3xl font-semibold text-[#1a1a1a] mb-12 text-center tracking-tight">
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-4">
+          {faqs.map((faq, index) => (
+            <div class="bg-white border border-[#e5e5e5] rounded-xl overflow-hidden">
+              <details class="group">
+                <summary class="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-[#f5f5f5] transition-macos">
+                  <span class="font-medium text-[#1a1a1a] pr-4">{faq.question}</span>
+                  <span class="transition-transform duration-200 group-open:rotate-180">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#6b6b6b]">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-6 pb-6 text-[#6b6b6b] leading-relaxed">
+                  {faq.answer}
+                </div>
+              </details>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { Shield, Lock, Eye, Server } from 'lucide-react';
+
+const privacyPoints = [
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    title: 'Local Processing Only',
+    description: 'All spreadsheet processing happens entirely on your Mac. Your files are never uploaded to any server.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+    title: 'No Data Collection',
+    description: 'We do not collect, store, or transmit any of your spreadsheet data or personal information.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
+    title: 'No Analytics or Tracking',
+    description: 'Bale Sheet does not include any analytics, tracking, or telemetry that monitors your usage.',
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+    title: 'No Network Required',
+    description: 'Bale Sheet works completely offline. No internet connection is required for any functionality.',
+  },
+];
+---
+
+<Layout title="Privacy Policy - Bale Sheet" description="Bale Sheet Privacy Policy - Your data stays on your Mac">
+  <Navigation />
+  
+  <main class="flex-1 pt-14">
+    <!-- Hero Section -->
+    <section class="py-20 bg-[#f5f5f5]">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-white rounded-2xl border border-[#e5e5e5] text-[#1a1a1a]">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-semibold text-[#1a1a1a] mb-4 tracking-tight">
+          Privacy Policy
+        </h1>
+        <p class="text-lg text-[#6b6b6b] max-w-2xl mx-auto">
+          Your privacy is our top priority. Bale Sheet is designed from the ground up to keep your data safe and secure.
+        </p>
+      </div>
+    </section>
+
+    <!-- Privacy Highlights -->
+    <section class="py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          {privacyPoints.map(point => (
+            <div class="bg-white p-8 rounded-2xl border border-[#e5e5e5] hover:border-[#d4d4d4] transition-macos">
+              <div class="w-12 h-12 mb-4 bg-[#f5f5f5] rounded-xl flex items-center justify-center text-[#1a1a1a]">
+                <Fragment set:html={point.icon} />
+              </div>
+              <h3 class="font-semibold text-[#1a1a1a] mb-2 text-lg">{point.title}</h3>
+              <p class="text-[#6b6b6b] leading-relaxed">{point.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Policy -->
+    <section class="py-20 bg-[#f5f5f5]">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="bg-white rounded-2xl border border-[#e5e5e5] p-8 md:p-12">
+          <div class="max-w-none">
+            <h2 class="text-2xl font-semibold text-[#1a1a1a] mb-6">Detailed Privacy Policy</h2>
+            <p class="text-[#6b6b6b] mb-6">
+              Last updated: March 7, 2026
+            </p>
+
+            <h3 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-4">1. Information We Do Not Collect</h3>
+            <p class="text-[#6b6b6b] mb-4">
+              Bale Sheet does not collect, store, or transmit any of the following:
+            </p>
+            <ul class="list-disc list-inside text-[#6b6b6b] mb-6 space-y-2">
+              <li>Spreadsheet content or data</li>
+              <li>File names or metadata</li>
+              <li>Usage statistics or patterns</li>
+              <li>Personal information</li>
+              <li>Device information</li>
+              <li>Crash reports (unless explicitly opted-in through macOS)</li>
+            </ul>
+
+            <h3 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-4">2. How Bale Sheet Works</h3>
+            <p class="text-[#6b6b6b] mb-4">
+              Bale Sheet is a native macOS application that operates entirely on your local machine:
+            </p>
+            <ul class="list-disc list-inside text-[#6b6b6b] mb-6 space-y-2">
+              <li>All file processing occurs locally on your Mac</li>
+              <li>No data is uploaded to cloud servers</li>
+              <li>No internet connection is required</li>
+              <li>Your files remain in your control at all times</li>
+            </ul>
+
+            <h3 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-4">3. Code Generation Privacy</h3>
+            <p class="text-[#6b6b6b] mb-4">
+              When you use Bale Sheet's code generation features:
+            </p>
+            <ul class="list-disc list-inside text-[#6b6b6b] mb-6 space-y-2">
+              <li>All code is generated locally on your machine</li>
+              <li>No schema or data information is transmitted</li>
+              <li>Generated code is immediately available for your use</li>
+            </ul>
+
+            <h3 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-4">4. macOS Integration</h3>
+            <p class="text-[#6b6b6b] mb-4">
+              Bale Sheet integrates with macOS features in the following ways:
+            </p>
+            <ul class="list-disc list-inside text-[#6b6b6b] mb-6 space-y-2">
+              <li>File access is controlled by macOS sandbox permissions</li>
+              <li>Clipboard access only occurs when you explicitly copy data</li>
+              <li>No background processes or data syncing</li>
+            </ul>
+
+            <h3 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-4">5. Updates and Connectivity</h3>
+            <p class="text-[#6b6b6b] mb-4">
+              Bale Sheet may check for updates:
+            </p>
+            <ul class="list-disc list-inside text-[#6b6b6b] mb-6 space-y-2">
+              <li>Update checks only retrieve version information</li>
+              <li>No identifying information is sent during update checks</li>
+              <li>You can disable automatic update checks in preferences</li>
+            </ul>
+
+            <h3 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-4">6. Third-Party Services</h3>
+            <p class="text-[#6b6b6b] mb-4">
+              Bale Sheet does not integrate with any third-party services that would access your data. 
+              The application is completely self-contained.
+            </p>
+
+            <h3 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-4">7. Your Rights</h3>
+            <p class="text-[#6b6b6b] mb-4">
+              Since we do not collect any personal data, there is no data to access, modify, or delete. 
+              You have complete control over all your files and data at all times.
+            </p>
+
+            <h3 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-4">8. Contact Us</h3>
+            <p class="text-[#6b6b6b] mb-4">
+              If you have any questions about this Privacy Policy or Bale Sheet's privacy practices,
+              please contact us at:
+            </p>
+            <p class="text-[#1a1a1a]">
+              <a href="mailto:ikinokori2024@gmail.com" class="text-[#2563eb] hover:underline">ikinokori2024@gmail.com</a>
+            </p>
+
+            <h3 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-4">9. Changes to This Policy</h3>
+            <p class="text-[#6b6b6b] mb-4">
+              We may update this Privacy Policy from time to time. Any changes will be posted on this page 
+              with an updated revision date. Since Bale Sheet does not collect contact information, 
+              we cannot notify users directly of policy changes.
+            </p>
+
+            <div class="mt-12 p-6 bg-[#f5f5f5] rounded-xl border border-[#e5e5e5]">
+              <p class="text-[#1a1a1a] font-medium mb-2">Summary</p>
+              <p class="text-[#6b6b6b] text-sm">
+                Bale Sheet is designed with privacy as a core principle. We believe your data belongs to you, 
+                and we have built an application that respects that principle by never collecting or transmitting 
+                any of your information.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

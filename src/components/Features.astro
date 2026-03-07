@@ -1,0 +1,288 @@
+---
+import FeatureItem from './FeatureItem.astro';
+
+const features = [
+  {
+    title: "Universal Compatibility",
+    description: "Support for .xlsx, .numbers, .csv, and legacy formats like Lotus 1-2-3. Open any spreadsheet from any era without compatibility issues.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M14 13h2"/><path d="M14 17h2"/></svg>`,
+  },
+  {
+    title: "Developer-First Tools",
+    description: "Generate ORM code (SQLAlchemy, Prisma, Norm) and reading code in 10+ languages including Nim, Rust, and Go. Turn your data into code instantly.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+  },
+  {
+    title: "Privacy-First & Fast",
+    description: "All processing happens locally on your Mac with a low memory footprint. Your data never leaves your machine, ensuring complete privacy and blazing-fast performance.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+  },
+];
+
+const codeGenFeatures = [
+  {
+    title: "ORM Model Generator",
+    description: "Generate ORM models in SQLAlchemy, Prisma, GORM, Diesel, SeaORM, JPA/Hibernate, Entity Framework, Norm, ActiveRecord, and Eloquent. Auto-detect data types and relationships.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
+  },
+  {
+    title: "Reader Code Generator",
+    description: "Generate XLSX reading code in 10+ languages including Python (openpyxl), TypeScript, JavaScript, Go, Rust, Java, C#, Nim, Ruby, and PHP.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+  },
+  {
+    title: "Array/Object Literals",
+    description: "Export spreadsheet data as array or object literals in 15+ programming languages. Perfect for seeding databases or creating test fixtures.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>`,
+  },
+];
+
+const formatList = [
+  { ext: 'XLSX', color: '#217346' },
+  { ext: 'NUMBERS', color: '#1E9CFC' },
+  { ext: 'CSV', color: '#6b6b6b' },
+  { ext: 'ODS', color: '#1E9CFC' },
+  { ext: 'WK1', color: '#8B4513' },
+  { ext: '123', color: '#8B4513' },
+  { ext: 'QPW', color: '#6b6b6b' },
+  { ext: 'XLR', color: '#217346' },
+];
+
+const mainLanguages = ['Python', 'TypeScript', 'Rust', 'Go', 'Nim', 'Java', 'C#', 'Ruby', 'PHP'];
+const ormList = ['SQLAlchemy', 'Prisma', 'GORM', 'Diesel', 'SeaORM', 'Hibernate', 'EF Core'];
+const readerLangs = ['Python', 'Go', 'Rust', 'Nim', 'TypeScript', 'Java', 'C#'];
+const literalFormats = ['JSON', 'TypeScript', 'Python', 'Rust', 'Go', 'Nim', 'Ruby'];
+---
+
+<section id="features" class="relative py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-semibold text-[#1a1a1a] mb-4 tracking-tight">
+        Everything you need
+      </h2>
+      <p class="text-lg text-[#6b6b6b] max-w-2xl mx-auto">
+        Built for developers and power users who demand speed, privacy, and flexibility.
+      </p>
+    </div>
+
+    <!-- Feature 1: Universal Compatibility -->
+    <FeatureItem
+      title={features[0].title}
+      description={features[0].description}
+      icon={features[0].icon}
+      index={0}
+    >
+      <div class="p-8">
+        <div class="grid grid-cols-4 gap-4 mb-6">
+          {formatList.map(format => (
+            <div class="flex flex-col items-center gap-2 p-4 bg-[#f5f5f5] rounded-xl border border-[#e5e5e5] hover:border-[#d4d4d4] transition-macos group">
+              <div class="w-10 h-12 bg-white rounded border border-[#e5e5e5] flex items-center justify-center text-[10px] font-bold" style={`color: ${format.color}`}>
+                {format.ext.slice(0, 3)}
+              </div>
+              <span class="text-[10px] text-[#6b6b6b] uppercase tracking-wide">{format.ext}</span>
+            </div>
+          ))}
+        </div>
+        <p class="text-center text-sm text-[#6b6b6b]">And many more legacy formats supported</p>
+      </div>
+    </FeatureItem>
+
+    <!-- Feature 2: Developer-First Tools -->
+    <FeatureItem
+      title={features[1].title}
+      description={features[1].description}
+      icon={features[1].icon}
+      reversed={true}
+      index={1}
+    >
+      <div class="bg-[#1a1a1a] p-6">
+        <div class="flex items-center gap-2 mb-4 pb-4 border-b border-white/10">
+          <div class="flex gap-1.5">
+            <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></div>
+          </div>
+          <div class="flex-1 text-center text-xs text-white/50">generated_model.py</div>
+        </div>
+        <pre class="text-xs leading-relaxed overflow-x-auto"><code class="text-[#e5e5e5]"><span class="text-[#ff79c6]">from</span> <span class="text-[#8be9fd]">sqlalchemy</span> <span class="text-[#ff79c6]">import</span> Column, Integer, String
+<span class="text-[#ff79c6]">from</span> <span class="text-[#8be9fd]">sqlalchemy.ext.declarative</span> <span class="text-[#ff79c6]">import</span> declarative_base
+
+Base = <span class="text-[#8be9fd]">declarative_base</span>()
+
+<span class="text-[#ff79c6]">class</span> <span class="text-[#f1fa8c]">User</span>(Base):
+    __tablename__ = <span class="text-[#f1fa8c]">'users'</span>
+    
+    id = <span class="text-[#8be9fd]">Column</span>(Integer, primary_key=<span class="text-[#bd93f9]">True</span>)
+    name = <span class="text-[#8be9fd]">Column</span>(String(<span class="text-[#bd93f9]">100</span>))
+    email = <span class="text-[#8be9fd]">Column</span>(String(<span class="text-[#bd93f9]">200</span>))</code></pre>
+        <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-white/10">
+          {mainLanguages.map(lang => (
+            <span class="px-2 py-1 text-[10px] bg-white/10 text-white/70 rounded">{lang}</span>
+          ))}
+        </div>
+      </div>
+    </FeatureItem>
+
+    <!-- Feature 3: Privacy-First & Fast -->
+    <FeatureItem
+      title={features[2].title}
+      description={features[2].description}
+      icon={features[2].icon}
+      index={2}
+    >
+      <div class="p-8">
+        <div class="space-y-6">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-sm font-medium text-[#1a1a1a]">Memory Usage</span>
+              <span class="text-sm text-[#6b6b6b]">~50MB</span>
+            </div>
+            <div class="h-2 bg-[#e5e5e5] rounded-full overflow-hidden">
+              <div class="h-full w-[15%] bg-[#28c840] rounded-full"></div>
+            </div>
+            <p class="text-xs text-[#6b6b6b] mt-1">vs 500MB+ for typical spreadsheet apps</p>
+          </div>
+          
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-sm font-medium text-[#1a1a1a]">Launch Time</span>
+              <span class="text-sm text-[#6b6b6b]">&lt;100ms</span>
+            </div>
+            <div class="h-2 bg-[#e5e5e5] rounded-full overflow-hidden">
+              <div class="h-full w-[10%] bg-[#1a1a1a] rounded-full"></div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-sm font-medium text-[#1a1a1a]">File Open Speed</span>
+              <span class="text-sm text-[#6b6b6b]">Instant</span>
+            </div>
+            <div class="h-2 bg-[#e5e5e5] rounded-full overflow-hidden">
+              <div class="h-full w-[95%] bg-[#1a1a1a] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-6 p-4 bg-[#f5f5f5] rounded-xl border border-[#e5e5e5]">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-[#e5e5e5]">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#28c840" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium text-[#1a1a1a] text-sm">Local Processing Only</p>
+              <p class="text-xs text-[#6b6b6b]">Your data never leaves your Mac</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </FeatureItem>
+
+    <!-- Code Generation Features Section -->
+    <div class="pt-20 mt-20 border-t border-[#e5e5e5]">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-semibold text-[#1a1a1a] mb-4 tracking-tight">
+          Code Generation Features
+        </h2>
+        <p class="text-lg text-[#6b6b6b] max-w-2xl mx-auto">
+          Turn your spreadsheet data into production-ready code with one click.
+        </p>
+      </div>
+
+      <!-- Code Gen Feature 1: ORM Models -->
+      <FeatureItem
+        title={codeGenFeatures[0].title}
+        description={codeGenFeatures[0].description}
+        icon={codeGenFeatures[0].icon}
+        index={3}
+      >
+        <div class="bg-[#1a1a1a] p-6" set:html={`
+          <div class="flex items-center gap-2 mb-4 pb-4 border-b border-white/10">
+            <div class="flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></div>
+            </div>
+            <div class="flex-1 text-center text-xs text-white/50">models.rs</div>
+          </div>
+          <pre class="text-xs leading-relaxed overflow-x-auto"><code class="text-[#e5e5e5]"><span class="text-[#ff79c6]">use</span> <span class="text-[#8be9fd]">sea_orm::entity::prelude</span>::*;
+
+<span class="text-[#ff79c6]">#[derive</span>(Clone, Debug, PartialEq, DeriveEntityModel)<span class="text-[#ff79c6]">]</span>
+<span class="text-[#ff79c6]">#[sea_orm</span>(table_name = <span class="text-[#f1fa8c]">"users"</span>)<span class="text-[#ff79c6]">]</span>
+<span class="text-[#ff79c6]">pub struct</span> <span class="text-[#f1fa8c]">Model</span> {
+    <span class="text-[#ff79c6]">#[sea_orm</span>(primary_key)<span class="text-[#ff79c6]">]</span>
+    <span class="text-[#ff79c6]">pub</span> id: <span class="text-[#8be9fd]">i32</span>,
+    <span class="text-[#ff79c6]">pub</span> name: <span class="text-[#8be9fd]">String</span>,
+    <span class="text-[#ff79c6]">pub</span> email: <span class="text-[#8be9fd]">String</span>,
+}</code></pre>
+          <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-white/10">
+            ${ormList.map(orm => `<span class="px-2 py-1 text-[10px] bg-white/10 text-white/70 rounded">${orm}</span>`).join('')}
+          </div>
+        `} />
+      </FeatureItem>
+
+      <!-- Code Gen Feature 2: Reader Code -->
+      <FeatureItem
+        title={codeGenFeatures[1].title}
+        description={codeGenFeatures[1].description}
+        icon={codeGenFeatures[1].icon}
+        reversed={true}
+        index={4}
+      >
+        <div class="bg-[#1a1a1a] p-6" set:html={`
+          <div class="flex items-center gap-2 mb-4 pb-4 border-b border-white/10">
+            <div class="flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></div>
+            </div>
+            <div class="flex-1 text-center text-xs text-white/50">reader.go</div>
+          </div>
+          <pre class="text-xs leading-relaxed overflow-x-auto"><code class="text-[#e5e5e5]"><span class="text-[#ff79c6]">func</span> <span class="text-[#8be9fd]">ReadUsers</span>(filename <span class="text-[#8be9fd]">string</span>) ([]User, <span class="text-[#8be9fd]">error</span>) {
+    f, err := excelize.<span class="text-[#8be9fd]">OpenFile</span>(filename)
+    <span class="text-[#ff79c6]">if</span> err != <span class="text-[#bd93f9]">nil</span> {
+        <span class="text-[#ff79c6]">return</span> <span class="text-[#bd93f9]">nil</span>, err
+    }
+    rows := f.<span class="text-[#8be9fd]">GetRows</span>(<span class="text-[#f1fa8c]">"Sheet1"</span>)
+    <span class="text-[#6272a4]">// Auto-generated reader code</span>
+}</code></pre>
+          <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-white/10">
+            ${readerLangs.map(lang => `<span class="px-2 py-1 text-[10px] bg-white/10 text-white/70 rounded">${lang}</span>`).join('')}
+          </div>
+        `} />
+      </FeatureItem>
+
+      <!-- Code Gen Feature 3: Array/Object Literals -->
+      <FeatureItem
+        title={codeGenFeatures[2].title}
+        description={codeGenFeatures[2].description}
+        icon={codeGenFeatures[2].icon}
+        index={5}
+      >
+        <div class="bg-[#1a1a1a] p-6" set:html={`
+          <div class="flex items-center gap-2 mb-4 pb-4 border-b border-white/10">
+            <div class="flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></div>
+            </div>
+            <div class="flex-1 text-center text-xs text-white/50">data.ts</div>
+          </div>
+          <pre class="text-xs leading-relaxed overflow-x-auto"><code class="text-[#e5e5e5]"><span class="text-[#ff79c6]">export const</span> users = [
+  { id: <span class="text-[#bd93f9]">1</span>, name: <span class="text-[#f1fa8c]">"Alice"</span>, email: <span class="text-[#f1fa8c]">"alice@example.com"</span> },
+  { id: <span class="text-[#bd93f9]">2</span>, name: <span class="text-[#f1fa8c]">"Bob"</span>, email: <span class="text-[#f1fa8c]">"bob@example.com"</span> },
+  { id: <span class="text-[#bd93f9]">3</span>, name: <span class="text-[#f1fa8c]">"Charlie"</span>, email: <span class="text-[#f1fa8c]">"charlie@example.com"</span> },
+] <span class="text-[#ff79c6]">as const</span>;
+
+<span class="text-[#6272a4]">// Perfect for seeding databases</span></code></pre>
+          <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-white/10">
+            ${literalFormats.map(fmt => `<span class="px-2 py-1 text-[10px] bg-white/10 text-white/70 rounded">${fmt}</span>`).join('')}
+          </div>
+        `} />
+      </FeatureItem>
+    </div>
+  </div>
+</section>
