@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Bale Sheet - The Lightweight, Native Spreadsheet Viewer for macOS" } = Astro.props;
+const { title, description = "Open Excel, CSV & Numbers files instantly on Mac. Native spreadsheet viewer with developer code generation tools. One-time purchase on Mac App Store." } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -17,7 +17,43 @@ const { title, description = "Bale Sheet - The Lightweight, Native Spreadsheet V
     <meta name="description" content={description} />
     <meta name="theme-color" content="#fafafa" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://balesheet.app/" />
+    <meta property="og:image" content="https://balesheet.app/logo.png" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://balesheet.app/logo.png" />
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://balesheet.app/" />
+    
     <title>{title}</title>
+    
+    <!-- Schema.org SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Bale Sheet",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "macOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "1.99",
+        "priceCurrency": "USD"
+      },
+      "description": "Lightweight native spreadsheet viewer for macOS with developer code generation tools",
+      "image": "https://balesheet.app/logo.png",
+      "downloadUrl": "https://apps.apple.com/us/app/bale-sheet/id6727007603"
+    }
+    </script>
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
