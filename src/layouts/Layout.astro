@@ -17,7 +17,7 @@ const {
 } = Astro.props;
 
 const canonicalUrl = `${SITE_URL}${Astro.url.pathname}`;
-const ogImage = `${SITE_URL}/logo.png`;
+const ogImage = `${SITE_URL}/og-image.png`;
 ---
 
 <!DOCTYPE html>
@@ -42,8 +42,8 @@ const ogImage = `${SITE_URL}/logo.png`;
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1024" />
-    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
