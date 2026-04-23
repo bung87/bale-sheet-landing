@@ -6,12 +6,35 @@ import Features from '../components/Features.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Bale Sheet | Excel & Spreadsheet Viewer for Mac">
+<Layout
+  title="Bale Sheet | Excel & Spreadsheet Viewer for Mac"
+  description="Open Excel, CSV & Numbers files instantly on Mac. Native spreadsheet viewer with developer code generation tools. One-time purchase on Mac App Store."
+>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Bale Sheet",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "macOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "1.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "description": "Lightweight native spreadsheet viewer for macOS with developer code generation tools",
+      "image": "https://bale-sheet-landing.vercel.app/logo.png",
+      "url": "https://bale-sheet-landing.vercel.app",
+      "downloadUrl": "https://apps.apple.com/us/app/bale-sheet/id6727007603"
+    }
+  </script>
+
   <Navigation />
   <main class="flex-1">
     <Hero />
     <Features />
-    
+
     <!-- FAQ Section -->
     <section id="faq" class="py-24 bg-white">
       <div class="max-w-3xl mx-auto px-6">
@@ -30,7 +53,7 @@ import Footer from '../components/Footer.astro';
               Bale Sheet is a one-time purchase available on the Mac App Store. Pricing may vary by region. There are no subscriptions or in-app purchases.
             </div>
           </details>
-          
+
           <details class="group bg-[#f5f5f5] rounded-xl border border-[#e5e5e5] overflow-hidden">
             <summary class="p-6 cursor-pointer font-medium text-[#1a1a1a] flex items-center justify-between">
               Do I need Microsoft Office to use it?
@@ -42,7 +65,7 @@ import Footer from '../components/Footer.astro';
               Not at all. Bale Sheet is a standalone native macOS app that opens Excel (.xlsx), CSV, Numbers, and many other formats without requiring Microsoft Office or any other software.
             </div>
           </details>
-          
+
           <details class="group bg-[#f5f5f5] rounded-xl border border-[#e5e5e5] overflow-hidden">
             <summary class="p-6 cursor-pointer font-medium text-[#1a1a1a] flex items-center justify-between">
               Is my data secure?
@@ -54,7 +77,7 @@ import Footer from '../components/Footer.astro';
               Absolutely. All processing happens locally on your Mac. Your files never leave your computer, are never uploaded to the cloud, and are never shared with any third parties.
             </div>
           </details>
-          
+
           <details class="group bg-[#f5f5f5] rounded-xl border border-[#e5e5e5] overflow-hidden">
             <summary class="p-6 cursor-pointer font-medium text-[#1a1a1a] flex items-center justify-between">
               What file formats are supported?
@@ -66,7 +89,7 @@ import Footer from '../components/Footer.astro';
               Bale Sheet supports Excel (.xlsx, .xls), CSV, Numbers, ODS, and legacy formats like Lotus 1-2-3 (.wk1, .123), Quattro Pro (.qpw), and Microsoft Works (.xlr).
             </div>
           </details>
-          
+
           <details class="group bg-[#f5f5f5] rounded-xl border border-[#e5e5e5] overflow-hidden">
             <summary class="p-6 cursor-pointer font-medium text-[#1a1a1a] flex items-center justify-between">
               What macOS versions are supported?
@@ -81,7 +104,7 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
     </section>
-    
+
     <!-- CTA Section -->
     <section class="py-24 bg-[#1a1a1a]">
       <div class="max-w-4xl mx-auto px-6 text-center">

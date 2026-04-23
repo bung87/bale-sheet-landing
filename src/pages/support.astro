@@ -51,9 +51,13 @@ const faqs = [
 ];
 ---
 
-<Layout title="Community & Support - Bale Sheet">
+<Layout
+  title="Community & Support - Bale Sheet"
+  description="Get help, connect with other users, and stay updated on the latest Bale Sheet news."
+  noindex={true}
+>
   <Navigation />
-  
+
   <main class="flex-1 pt-14">
     <!-- Hero Section -->
     <section class="py-20 bg-[#f5f5f5]">
@@ -76,7 +80,7 @@ const faqs = [
               Join our Discord Community
             </h2>
             <p class="text-[#6b6b6b] mb-6 leading-relaxed">
-              Connect with thousands of Bale Sheet users, get real-time support, share tips and tricks, 
+              Connect with thousands of Bale Sheet users, get real-time support, share tips and tricks,
               and be the first to know about new features and updates.
             </p>
             <div class="space-y-4">
@@ -146,7 +150,7 @@ const faqs = [
               </div>
               <h3 class="font-semibold text-[#1a1a1a] mb-2">{option.title}</h3>
               <p class="text-sm text-[#6b6b6b] mb-4 leading-relaxed flex-1">{option.description}</p>
-              <a 
+              <a
                 href={option.link}
                 class="text-sm font-medium text-[#1a1a1a] hover:opacity-70 transition-macos inline-flex items-center gap-1 mt-auto"
               >
@@ -169,7 +173,7 @@ const faqs = [
           Frequently Asked Questions
         </h2>
         <div class="space-y-4">
-          {faqs.map((faq, index) => (
+          {faqs.map((faq) => (
             <div class="bg-white border border-[#e5e5e5] rounded-xl overflow-hidden">
               <details class="group">
                 <summary class="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-[#f5f5f5] transition-macos">
@@ -190,6 +194,6 @@ const faqs = [
       </div>
     </section>
   </main>
-  
+
   <Footer />
 </Layout>

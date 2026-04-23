@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import { Shield, Lock, Eye, Server } from 'lucide-react';
 
 const privacyPoints = [
   {
@@ -28,9 +27,13 @@ const privacyPoints = [
 ];
 ---
 
-<Layout title="Privacy Policy - Bale Sheet" description="Bale Sheet Privacy Policy - Your data stays on your Mac">
+<Layout
+  title="Privacy Policy - Bale Sheet"
+  description="Bale Sheet Privacy Policy - Your data stays on your Mac"
+  noindex={true}
+>
   <Navigation />
-  
+
   <main class="flex-1 pt-14">
     <!-- Hero Section -->
     <section class="py-20 bg-[#f5f5f5]">
@@ -132,13 +135,13 @@ const privacyPoints = [
 
             <h3 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-4">6. Third-Party Services</h3>
             <p class="text-[#6b6b6b] mb-4">
-              Bale Sheet does not integrate with any third-party services that would access your data. 
+              Bale Sheet does not integrate with any third-party services that would access your data.
               The application is completely self-contained.
             </p>
 
             <h3 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-4">7. Your Rights</h3>
             <p class="text-[#6b6b6b] mb-4">
-              Since we do not collect any personal data, there is no data to access, modify, or delete. 
+              Since we do not collect any personal data, there is no data to access, modify, or delete.
               You have complete control over all your files and data at all times.
             </p>
 
@@ -153,16 +156,16 @@ const privacyPoints = [
 
             <h3 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-4">9. Changes to This Policy</h3>
             <p class="text-[#6b6b6b] mb-4">
-              We may update this Privacy Policy from time to time. Any changes will be posted on this page 
-              with an updated revision date. Since Bale Sheet does not collect contact information, 
+              We may update this Privacy Policy from time to time. Any changes will be posted on this page
+              with an updated revision date. Since Bale Sheet does not collect contact information,
               we cannot notify users directly of policy changes.
             </p>
 
             <div class="mt-12 p-6 bg-[#f5f5f5] rounded-xl border border-[#e5e5e5]">
               <p class="text-[#1a1a1a] font-medium mb-2">Summary</p>
               <p class="text-[#6b6b6b] text-sm">
-                Bale Sheet is designed with privacy as a core principle. We believe your data belongs to you, 
-                and we have built an application that respects that principle by never collecting or transmitting 
+                Bale Sheet is designed with privacy as a core principle. We believe your data belongs to you,
+                and we have built an application that respects that principle by never collecting or transmitting
                 any of your information.
               </p>
             </div>
@@ -171,6 +174,6 @@ const privacyPoints = [
       </div>
     </section>
   </main>
-  
+
   <Footer />
 </Layout>

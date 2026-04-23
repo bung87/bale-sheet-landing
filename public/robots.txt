@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /privacy/
+Disallow: /support/
+
+Sitemap: https://bale-sheet-landing.vercel.app/sitemap.xml
